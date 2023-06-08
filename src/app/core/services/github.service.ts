@@ -286,6 +286,14 @@ export class GithubService {
     octokit.issues.updateLabel({ owner: ORG_NAME, repo: REPO, name: labelName, current_name: labelName, color: labelColor });
   }
 
+  /**
+   * Deletes a label in the current repository.
+   * @param labelName - name of existing label
+   */
+  deleteLabel(labelName: string): void {
+    octokit.issues.deleteLabel({ owner: ORG_NAME, repo: REPO, name: labelName});
+  }
+
   closeIssue(id: number): Observable<GithubIssue> {
     return from(octokit.issues.update({ owner: ORG_NAME, repo: REPO, issue_number: id, state: 'closed' })).pipe(
       map((response: GithubResponse<GithubIssue>) => {
