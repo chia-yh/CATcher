@@ -105,7 +105,7 @@ const REQUIRED_LABELS = {
     DocumentationBug: new Label('type', 'DocumentationBug', COLOR_PURPLE_LIGHT, DOCUMENTATION_BUG_DEFINITION),
     FeatureFlaw: new Label('type', 'FeatureFlaw', COLOR_PURPLE_LIGHT, FEATURE_FLAW_DEFINITION),
     FunctionalityBug: new Label('type', 'FunctionalityBug', COLOR_PURPLE, FUNCTIONALITY_BUG_DEFINITION),
-    UiFlaw: new Label('type', 'UiFlaw', COLOR_PURPLE_LIGHT, UI_FLAW_DEFINITION)
+    UiFlaw: new Label('type', 'UIFlaw', COLOR_PURPLE_LIGHT, UI_FLAW_DEFINITION)
   },
   response: {
     Accepted: new Label('response', 'Accepted', COLOR_GREEN, ACCEPTED_DEFINITION),
