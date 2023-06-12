@@ -1,0 +1,30 @@
+// Ref: https://m1.material.io/style/color.html#color-color-palette
+// Indigo palette (default)
+$catcher-palette: (
+ 50: #e8eaf6,
+ 100: #c5cae9,
+ 200: #9fa8da,
+ 300: #7986cb,
+ 400: #5C6BC0,
+ 500: #3F51B5,
+ 600: #3949AB,
+ 700: #303F9F,
+ 800: #283593,
+ 900: #1A237E,
+ A100: #8C9EFF,
+ A200: #536DFE,
+ A400: #3D5AFE,
+ A700: #304FFE
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+   400: white,
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white
+ )
+);
