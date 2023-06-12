@@ -14,6 +14,7 @@ import { IssueService } from '../../core/services/issue.service';
 import { LoggingService } from '../../core/services/logging.service';
 import { PhaseDescription, PhaseService } from '../../core/services/phase.service';
 import { UserService } from '../../core/services/user.service';
+import { ThemeService } from '../../core/services/theme.service';
 
 const ISSUE_TRACKER_URL = 'https://github.com/CATcher-org/CATcher/issues';
 
@@ -45,7 +46,8 @@ export class HeaderComponent implements OnInit {
     private issueService: IssueService,
     private errorHandlingService: ErrorHandlingService,
     private githubService: GithubService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private themeService: ThemeService
   ) {
     router.events
       .pipe(
@@ -171,6 +173,10 @@ export class HeaderComponent implements OnInit {
     setTimeout(() => {
       this.isReloadButtonDisabled = false;
     }, 3000);
+  }
+
+  toggleDarkTheme() {
+    this.themeService.toggleDarkTheme();
   }
 
   logOut() {
