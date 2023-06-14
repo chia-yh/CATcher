@@ -2,6 +2,17 @@
 @import './assets/fontawesome/css/fontawesome.min.css';
 @import './assets/fontawesome/css/solid.min.css';
 
+/* Ref: https://v10.material.angular.io/guide/theming */
+@import '~@angular/material/theming';
+@import "./styles/themes/_dark";
+
+
+@include mat-core();
+
+.dark-theme {
+  @include angular-material-theme($catcher-dark-theme);
+}
+
 html,
 body {
   margin: 0;

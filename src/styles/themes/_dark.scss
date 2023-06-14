@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+@import '../palettes/catcher-palette.scss';
+
+$catcher-dark-primary: mat-palette($catcher-palette, 900);
+$catcher-dark-accent: mat-palette($catcher-palette, A200, A100, A400);
+
+/* Warn defaults to red */
+
+/* CATcher dark theme */
+$catcher-dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $catcher-dark-primary,
+      accent: $catcher-dark-accent,
+    )
+  )
+);
