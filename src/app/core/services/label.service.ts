@@ -273,8 +273,7 @@ export class LabelService {
    * Ensures that the repo has the required labels.
    * Compares the actual labels in the repo with the required labels. If an required label is missing,
    * it is added to the repo. If the required label exists but the label color is not as expected,
-   * the color is updated. Does not delete actual labels that do not match required labels.
-   * i.e., the repo might have more labels than the required labels after this operation.
+   * the color is updated. Deletes labels that do not match required labels.
    * @param actualLabels: labels in the repo.
    * @param requiredLabels: required labels.
    */
@@ -295,6 +294,13 @@ export class LabelService {
         }
       } else {
         throw new Error('Unexpected error: the repo has multiple labels with the same name ' + label.getFormattedName());
+      }
+    });
+
+    actualLabels.forEach((label) => {
+      if (!(requiredLabels.some((reqLabel) => reqLabel.getFormattedName() === label.getFormattedName()))) {
+        // the label does not match required labels -> delete label
+        this.githubService.deleteLabel(label.getFormattedName());
       }
     });
   }
